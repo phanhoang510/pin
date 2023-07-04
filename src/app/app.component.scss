@@ -7,12 +7,8 @@
   .list-pin {
     display: block;
     flex: 1;
-    padding-right: 6px;
-
-    &:first-child {
-      padding-left: 6px;
-    }
-
+    margin: 16px;
+    width: 70px;
     &.secret-mode input {
       text-security: disc;
       -webkit-text-security: disc;

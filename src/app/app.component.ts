@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   private inputsListSubscription!: Subscription;
 
   private state = {
-    isFocusingAfterAppearingCompleted: true,
+    isFocusingAfterAppearingCompleted: false,
     isInitialFocusFieldEnabled: true,
   };
 
