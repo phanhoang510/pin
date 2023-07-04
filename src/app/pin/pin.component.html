@@ -1,0 +1,15 @@
+<div class="content-pin">
+  <div
+    class="list-pin"
+    [class.secret-mode]="isSecretMode"
+    *ngFor="let holder of arrayPinInput; index as i"
+  >
+    <input
+      #input
+      (paste)="onPaste($event, i)"
+      (input)="onInputChange($event, i)"
+      (keydown)="onKeydown($event, i)"
+      type="text"
+    />
+  </div>
+</div>

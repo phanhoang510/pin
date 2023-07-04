@@ -62,23 +62,20 @@
 </div>
 
 <div class="content" role="main">
-  <h2>Pin</h2>
-  <div class="">
-    <div class="content-pin">
-      <div
-        class="list-pin"
-        [class.secret-mode]="isSecretMode"
-        *ngFor="let holder of arrayPinInput; index as i"
-      >
-        <input
-          #input
-          (paste)="onPaste($event, i)"
-          (input)="onInputChange($event, i)"
-          (keydown)="onKeydown($event, i)"
-          type="text"
-        />
-      </div>
-    </div>
-    <div></div>
+  <div class="child">
+    <h4>Pin Input With 4 digit</h4>
+    <app-pin [codeLength]="4" [isSecretMode]="false" [regexValidate]="digitalRegex" (getPin)="getPin($event)"/>
+  </div>
+  <div class="child">
+    <h4>Pin Input With 6 digit</h4>
+    <app-pin [codeLength]="6" [isSecretMode]="false" [regexValidate]="digitalRegex" (getPin)="getPin($event)"/>
+  </div>
+  <div class="child">
+    <h4>Pin Input With 6 digit and secret mode</h4>
+    <app-pin [codeLength]="6" [isSecretMode]="true" [regexValidate]="digitalRegex" (getPin)="getPin($event)"/>
+  </div>
+  <div class="child">
+    <h4>Pin Input With 6 digit and regex [A-Za-z]</h4>
+    <app-pin [codeLength]="6" [isSecretMode]="false" [regexValidate]="characterOnlyRegex" (getPin)="getPin($event)"/>
   </div>
 </div>
